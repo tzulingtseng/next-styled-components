@@ -5,6 +5,7 @@ const theme = {
   colors: {
     primary: '#60C4F8',
     secondary: '#71D664',
+    disable: '#DADADA',
     success: '#5EB253',
     info: '#60A6F8',
     warning: '#FFC05A',
@@ -28,12 +29,14 @@ const theme = {
     h6: { fontSize: '1.75rem' },
     content: { fontSize: '1rem' },
   },
-  radius: 10,
+  radius: 4,
   spacing: 8,
   getSpacing: (num = 1) => {
     return 8 * num;
   }
 }
+
+// TODO:深色主題
 
 // 自訂主題
 // const customTheme ={
