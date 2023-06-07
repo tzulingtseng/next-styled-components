@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import propTypes from "prop-types";
+import propTypes from 'prop-types';
 import Card from '../Card';
 import CardHeader from '../CardHeader';
 import CardBody from '../CardBody';
@@ -10,16 +10,25 @@ import Mask from '../Mask';
 import ButtonClose from '../ButtonClose';
 
 const StyledDialog = styled('div')({
-    position: 'relative'
+    position: 'relative',
 });
 
 const footerStyle = {
     display: 'flex',
     justifyContent: 'space-between',
-}
+};
 
-const Dialog = ({ dialogOpen, title, subtitle, children, confirmText, cancelText, onConfirm, onCancel, ...props }) => {
-
+const Dialog = ({
+    dialogOpen,
+    title,
+    subtitle,
+    children,
+    confirmText,
+    cancelText,
+    onConfirm,
+    onCancel,
+    ...props
+}) => {
     if (!dialogOpen) return <Fragment />;
 
     return (
@@ -31,14 +40,18 @@ const Dialog = ({ dialogOpen, title, subtitle, children, confirmText, cancelText
                     </CardHeader>
                     <CardBody>{children}</CardBody>
                     <CardFooter style={footerStyle}>
-                        <Button type='outline' onClick={onCancel}>{cancelText}</Button>
-                        <Button type='filled' onClick={onConfirm}>{confirmText}</Button>
+                        <Button type="outline" onClick={onCancel}>
+                            {cancelText}
+                        </Button>
+                        <Button type="filled" onClick={onConfirm}>
+                            {confirmText}
+                        </Button>
                     </CardFooter>
                 </Card>
             </StyledDialog>
         </Mask>
-    )
-}
+    );
+};
 
 Dialog.propTypes = {
     open: propTypes.bool,
@@ -50,7 +63,7 @@ Dialog.propTypes = {
     onCancel: propTypes.func,
     onEnter: propTypes.func,
     onExited: propTypes.func,
-}
+};
 
 Dialog.defaultProps = {
     open: true,
@@ -62,6 +75,6 @@ Dialog.defaultProps = {
     onCancel: () => false,
     onEnter: () => false,
     onExited: () => false,
-}
+};
 
-export default Dialog
+export default Dialog;

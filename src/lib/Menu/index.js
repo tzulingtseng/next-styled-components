@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
-import propTypes from "prop-types";
+import propTypes from 'prop-types';
 
 const StyledMenu = styled('div')(({ theme }) => ({
     top: 0,
@@ -11,7 +11,7 @@ const StyledMenu = styled('div')(({ theme }) => ({
 }));
 
 const Menu = ({ children, ...props }) => {
-    return <StyledMenu {...props} >{children}</StyledMenu>
-}
+    return <StyledMenu {...props}>{children}</StyledMenu>;
+};
 
 export default Menu;

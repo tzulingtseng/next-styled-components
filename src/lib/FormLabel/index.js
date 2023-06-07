@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import breakpoint from '../constant/breakpoint';
 
 const StyledLabel = styled('label')(({ theme, required }) => ({
     // disPlay: isEmpty(children) ? 'none' : 'initial',
     minWidth: 110,
-    position: "relative",
+    position: 'relative',
     color: theme.colors.grey4,
     padding: `${theme.getSpacing(1)}px ${theme.getSpacing(1)}px`,
-    "&::after": {
-        position: "absolute",
+    '&::after': {
+        position: 'absolute',
         content: required ? '"*"' : '""',
         color: theme.colors.danger,
         marginLeft: 2,
@@ -17,16 +17,14 @@ const StyledLabel = styled('label')(({ theme, required }) => ({
     [breakpoint.mediaLG]: {
         minWidth: 110,
         padding: `${theme.getSpacing(1)}px ${theme.getSpacing(2)}px`,
-        "&::after": {
+        '&::after': {
             left: 2,
         },
-    }
-}))
+    },
+}));
 
 const FormLabel = ({ children, ...props }) => {
-    return (
-        <StyledLabel {...props}>{children}</StyledLabel>
-    )
-}
+    return <StyledLabel {...props}>{children}</StyledLabel>;
+};
 
-export default FormLabel
+export default FormLabel;

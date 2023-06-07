@@ -1,15 +1,15 @@
-import React, { useState, Fragment, useRef } from 'react'
+import React, { useState, Fragment, useRef } from 'react';
 import styled from 'styled-components';
-import isEmpty from "lodash/isEmpty";
-import propTypes from "prop-types";
-import Pop from "../Pop";
-import Icon from "../Icon";
-import Card from "../Card";
-import CardBody from "../CardBody";
-import FormGroup from "../FormGroup";
-import FormLabel from "../FormLabel";
-import Typography from "../Typography";
-import ErrorMessage from "../ErrorMessage";
+import isEmpty from 'lodash/isEmpty';
+import propTypes from 'prop-types';
+import Pop from '../Pop';
+import Icon from '../Icon';
+import Card from '../Card';
+import CardBody from '../CardBody';
+import FormGroup from '../FormGroup';
+import FormLabel from '../FormLabel';
+import Typography from '../Typography';
+import ErrorMessage from '../ErrorMessage';
 
 const getBorderStyle = ({ theme, errorMessage, open }) => {
     if (!isEmpty(errorMessage)) {
@@ -20,16 +20,19 @@ const getBorderStyle = ({ theme, errorMessage, open }) => {
         return theme.colors.primary;
     }
 
-    console.log("TCL: getBorderStyle -> theme.colors.grey1", theme.colors.grey1);
+    console.log(
+        'TCL: getBorderStyle -> theme.colors.grey1',
+        theme.colors.grey1
+    );
     return theme.colors.grey1;
 };
 
-const StyledSelect = styled("div")({
+const StyledSelect = styled('div')({
     flex: 1,
-    display: "flex",
-    cursor: "pointer",
+    display: 'flex',
+    cursor: 'pointer',
     position: 'relative',
-    justifyContent: "space-between",
+    justifyContent: 'space-between',
     borderRadius: ({ theme }) => theme.radius,
     fontSize: ({ theme }) => theme.typography.content.fontSize,
     border: ({ theme, errorMessage, open }) =>
@@ -43,20 +46,20 @@ const StyledSelect = styled("div")({
 const StyledTypography = styled(Typography)({
     position: 'absolute',
     padding: ({ theme }) => `${theme.getSpacing(1)}px ${theme.getSpacing(2)}px`,
-})
+});
 
-const Options = styled("div")({
-    cursor: "pointer",
+const Options = styled('div')({
+    cursor: 'pointer',
     padding: ({ theme }) => theme.getSpacing(2),
-    "&:hover": {
+    '&:hover': {
         backgroundColor: ({ theme }) => theme.colors.primary,
         color: ({ theme }) => theme.colors.white,
     },
 });
 
-const OptionBox = styled("div")({
-    overflow: "hidden",
-    boxShadow: "0px 0px 5px rgba(0,0,0,0.17)",
+const OptionBox = styled('div')({
+    overflow: 'hidden',
+    boxShadow: '0px 0px 5px rgba(0,0,0,0.17)',
     borderRadius: ({ theme }) => theme.radius,
     backgroundColor: ({ theme }) => theme.colors.white,
     border: ({ theme }) => `1px solid ${theme.colors.grey1}`,
@@ -64,27 +67,28 @@ const OptionBox = styled("div")({
 
 const StyledInput = styled('input')({
     opacity: 0,
-    cursor: "pointer",
+    cursor: 'pointer',
     padding: ({ theme }) => `${theme.getSpacing(1)}px ${theme.getSpacing(2)}px`,
-})
+});
 
 const StyledIcon = styled(Icon)({
     right: 0,
     position: 'absolute',
     padding: ({ theme }) => `${theme.getSpacing(1)}px`,
-})
+});
 
 const handleClick = (open, setOpen) => () => {
     setOpen(!open);
 };
 
-const handleSelectItem = ({ setValue, setSelectedItem, setOpen, onChange }) => (
-    item
-) => (e) => {
-    setOpen(false);
-    setSelectedItem(item);
-    onChange(e);
-};
+const handleSelectItem =
+    ({ setValue, setSelectedItem, setOpen, onChange }) =>
+    (item) =>
+    (e) => {
+        setOpen(false);
+        setSelectedItem(item);
+        onChange(e);
+    };
 
 const handleOnBlur = (setOpen) => () => {
     setOpen(false);
@@ -119,10 +123,12 @@ const SelectTest = ({
                 <FormLabel required={required}>{label}</FormLabel>
                 <div ref={menuEle} onClick={onSelectClick}>
                     <StyledSelect open={open} errorMessage={errorMessage}>
-                        <StyledTypography>{selectedItem.label || placeholder}</StyledTypography>
-                        <StyledIcon icon='fa-angle-down' size={12} />
+                        <StyledTypography>
+                            {selectedItem.label || placeholder}
+                        </StyledTypography>
+                        <StyledIcon icon="fa-angle-down" size={12} />
                         <StyledInput
-                            type='text'
+                            type="text"
                             value={value}
                             onChange={onChange}
                             onBlur={onBlurClick}
@@ -131,28 +137,36 @@ const SelectTest = ({
                 </div>
                 <Pop open={open} anchorEl={menuEle}>
                     <OptionBox>
-                        {items && items.map((item, index) => {
-                            const key = `select_item_${item.label}_${item.vale}_${index}`;
-                            return (
-                                <Options key={key} onClick={onSelectItem(item)}>
-                                    {item.label}
-                                </Options>
-                            );
-                        })}
+                        {items &&
+                            items.map((item, index) => {
+                                const key = `select_item_${item.label}_${item.vale}_${index}`;
+                                return (
+                                    <Options
+                                        key={key}
+                                        onClick={onSelectItem(item)}
+                                    >
+                                        {item.label}
+                                    </Options>
+                                );
+                            })}
                     </OptionBox>
                 </Pop>
             </FormGroup>
-            <ErrorMessage errorMessage={errorMessage}>{errorMessage}</ErrorMessage>
+            <ErrorMessage errorMessage={errorMessage}>
+                {errorMessage}
+            </ErrorMessage>
         </Fragment>
     );
 };
 
-const handleOnChange = (values, setValue) => ({ target: { value } }) => {
-    const newValues = values.includes(value)
-        ? values.filter((selectedValue) => selectedValue !== value)
-        : [value, ...values];
-    setValue(newValues);
-};
+const handleOnChange =
+    (values, setValue) =>
+    ({ target: { value } }) => {
+        const newValues = values.includes(value)
+            ? values.filter((selectedValue) => selectedValue !== value)
+            : [value, ...values];
+        setValue(newValues);
+    };
 
 const Select = ({ ...props }) => {
     // TODO:FIX values not found
@@ -161,8 +175,9 @@ const Select = ({ ...props }) => {
 
     const onChange = handleOnChange(values, setValues);
 
-    return <SelectTest {...props} values={values} onChange={onChange} ></SelectTest>
+    return (
+        <SelectTest {...props} values={values} onChange={onChange}></SelectTest>
+    );
+};
 
-}
-
-export default Select
+export default Select;

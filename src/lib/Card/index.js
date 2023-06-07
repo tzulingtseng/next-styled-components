@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledCard = styled('div')(({ theme, style }) => ({
@@ -9,13 +9,11 @@ const StyledCard = styled('div')(({ theme, style }) => ({
     marginBottom: theme.getSpacing(2),
     backgroundColor: theme.colors.white,
     border: `1px solid ${theme.colors.grey1}`,
-    ...style
-}))
+    ...style,
+}));
 
 const Card = ({ children, ...props }) => {
-    return (
-        <StyledCard {...props}>{children}</StyledCard>
-    )
-}
+    return <StyledCard {...props}>{children}</StyledCard>;
+};
 
-export default Card
+export default Card;

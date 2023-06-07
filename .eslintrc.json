@@ -1,7 +1,8 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:storybook/recommended",
-    "plugin:storybook/recommended"
-  ]
+    "extends": [
+        "next/core-web-vitals",
+        "plugin:storybook/recommended",
+        "plugin:storybook/recommended",
+        "plugin:prettier/recommended" // Make this the last element so prettier config overrides other formatting rules
+    ]
 }

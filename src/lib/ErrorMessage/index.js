@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import breakpoint from '../constant/breakpoint';
 
@@ -9,14 +9,16 @@ const StyedErrorMessage = styled('div')(({ theme, props }) => ({
     [breakpoint.mediaLG]: {
         paddingLeft: theme.getSpacing(15),
     },
-}))
+}));
 
 const ErrorMessage = ({ children, ...props }) => {
     return (
         <>
-            {props.errorMessage && <StyedErrorMessage {...props}>{children}</StyedErrorMessage>}
+            {props.errorMessage && (
+                <StyedErrorMessage {...props}>{children}</StyedErrorMessage>
+            )}
         </>
-    )
-}
+    );
+};
 
-export default ErrorMessage
+export default ErrorMessage;

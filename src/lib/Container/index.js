@@ -1,14 +1,14 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledContainer = styled('main')(({ theme, style }) => ({
     position: 'relative',
     backgroundColor: theme.colors.grey0,
-    ...style
+    ...style,
 }));
 
 const Container = ({ children, ...props }) => {
-    return <StyledContainer style={props}>{children}</StyledContainer>
-}
+    return <StyledContainer style={props}>{children}</StyledContainer>;
+};
 
 export default Container;

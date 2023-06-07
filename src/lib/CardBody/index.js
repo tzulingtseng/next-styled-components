@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledCardBody = styled('div')(({ theme }) => ({
@@ -7,11 +7,7 @@ const StyledCardBody = styled('div')(({ theme }) => ({
 }));
 
 const CardBody = ({ children, ...props }) => {
-    return (
-        <StyledCardBody {...props}>
-            {children}
-        </StyledCardBody>
-    )
-}
+    return <StyledCardBody {...props}>{children}</StyledCardBody>;
+};
 
-export default CardBody
+export default CardBody;

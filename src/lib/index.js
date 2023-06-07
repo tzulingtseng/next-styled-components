@@ -123,3 +123,6 @@ export * from './TableRow';
 
 export { default as Typography } from './Typography';
 export * from './Typography';
+
+export { default as useColor } from '../hooks/useColor';
+export * from '../hooks/useColor';

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 
@@ -50,8 +50,8 @@ const StyledCardHeader = styled('div')({
     padding: ({ theme }) => `${theme.getSpacing(2)}px ${theme.getSpacing(4)}px`,
     borderBottom: ({ theme }) => `1px solid ${theme.colors.grey1}`,
     '& > h1, & > p': {
-        margin: 0
-    }
+        margin: 0,
+    },
 });
 
 const CardHeader = ({ title, subtitle, children, ...props }) => {
@@ -63,18 +63,17 @@ const CardHeader = ({ title, subtitle, children, ...props }) => {
             </div>
             {children}
         </StyledCardHeader>
-    )
-}
+    );
+};
 
 CardHeader.propTypes = {
     title: propTypes.string,
     subtitle: propTypes.string,
-}
+};
 
 CardHeader.defaultProps = {
     title: '',
     subtitle: '',
-}
+};
 
-
-export default CardHeader
+export default CardHeader;

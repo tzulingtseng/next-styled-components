@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledTableCell = styled('td')(({ theme, style }) => ({
@@ -7,9 +7,7 @@ const StyledTableCell = styled('td')(({ theme, style }) => ({
 }));
 
 const TableCell = ({ children, ...props }) => {
-    return (<StyledTableCell {...props}>
-        {children}
-    </StyledTableCell>)
-}
+    return <StyledTableCell {...props}>{children}</StyledTableCell>;
+};
 
 export default TableCell;

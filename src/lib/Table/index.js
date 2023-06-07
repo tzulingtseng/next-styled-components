@@ -1,15 +1,13 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledTable = styled('table')({
     width: '100%',
-    ...({ style }) => style
+    ...({ style }) => style,
 });
 
 const Table = ({ children, ...props }) => {
-    return <StyledTable {...props}>
-        {children}
-    </StyledTable>
-}
+    return <StyledTable {...props}>{children}</StyledTable>;
+};
 
-export default Table
+export default Table;

@@ -10,7 +10,7 @@ const Mask = styled('div')({
     position: 'fixed',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)'
-})
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+});
 
-export default Mask
+export default Mask;

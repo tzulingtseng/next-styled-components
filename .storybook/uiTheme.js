@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming/create';
-import brandImage from './assets/brand-logo-text.png'
+import brandImage from './assets/brand-logo-text.png';
 import theme from '../src/lib/theme';
 
 export default create({
@@ -36,4 +36,4 @@ export default create({
     brandTitle: 'TERA UI',
     brandUrl: 'https://example.com',
     brandImage,
-})
+});

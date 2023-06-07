@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledCardFooter = styled('div')(({ theme }) => ({
@@ -7,11 +7,7 @@ const StyledCardFooter = styled('div')(({ theme }) => ({
 }));
 
 const CardFooter = ({ children, ...props }) => {
-    return (
-        <StyledCardFooter {...props}>
-            {children}
-        </StyledCardFooter>
-    )
-}
+    return <StyledCardFooter {...props}>{children}</StyledCardFooter>;
+};
 
 export default CardFooter;
